@@ -1,0 +1,17 @@
+Etapa 21 - Program
+Pozitia: 1     | Nume echipa: FCSB                      | Format meciuri: VVEÎV      | Puncte: 44   
+Pozitia: 2     | Nume echipa: FC CFR 1907 CLUJ          | Format meciuri: VÎEÎE      | Puncte: 36   
+Pozitia: 3     | Nume echipa: UNIVERSITATEA CRAIOVA     | Format meciuri: EEÎVV      | Puncte: 34   
+Pozitia: 4     | Nume echipa: FC RAPID 1923             | Format meciuri: EEÎEÎ      | Puncte: 33   
+Pozitia: 5     | Nume echipa: SEPSI OSK                 | Format meciuri: EVVVÎ      | Puncte: 30   
+Pozitia: 6     | Nume echipa: FC FARUL CONSTANTA        | Format meciuri: EEVVÎ      | Puncte: 30   
+Pozitia: 7     | Nume echipa: AFC HERMANNSTADT          | Format meciuri: EÎVÎE      | Puncte: 29   
+Pozitia: 8     | Nume echipa: FC UNIVERSITATEA CLUJ     | Format meciuri: ÎÎVVV      | Puncte: 29   
+Pozitia: 9     | Nume echipa: FCU 1948 CRAIOVA          | Format meciuri: VVVÎV      | Puncte: 27   
+Pozitia: 10    | Nume echipa: FC PETROLUL               | Format meciuri: ÎEÎEV      | Puncte: 27   
+Pozitia: 11    | Nume echipa: SC OTELUL GALATI          | Format meciuri: ÎVÎVÎ      | Puncte: 26   
+Pozitia: 12    | Nume echipa: UTA ARAD                  | Format meciuri: EEÎVE      | Puncte: 24   
+Pozitia: 13    | Nume echipa: FC VOLUNTARI              | Format meciuri: ÎÎVEV      | Puncte: 24   
+Pozitia: 14    | Nume echipa: POLI IASI                 | Format meciuri: ÎEVÎE      | Puncte: 23   
+Pozitia: 15    | Nume echipa: DINAMO BUCURESTI          | Format meciuri: VVÎÎÎ      | Puncte: 16   
+Pozitia: 16    | Nume echipa: FC BOTOSANI               | Format meciuri: VÎÎEÎ      | Puncte: 12   
