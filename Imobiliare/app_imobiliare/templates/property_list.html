@@ -1,0 +1,193 @@
+<!-- property_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apartamente de vanzare</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        #current-time {
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: black;
+            text-align:right;
+
+        }
+
+        .search-container {
+            //display: flex;
+            //justify-content: column;
+           // align-items: left;
+            margin-bottom: 20px;
+            margin: auto;
+            width: 80%;
+            padding-bottom:25px;
+            padding: 0px
+        }
+
+        .search-bar {
+            padding: 10px;
+            width: 450px;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            width: 100px;
+            border-radius: 5px;
+            border: 2px solid #4CAF50;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #45a049;
+        }
+
+        .property-list-container {
+            margin: auto;
+            width: 80%;
+            padding-bottom:25px;
+            padding: 20px;
+            border-radius:15px;
+            border: 1px solid #282A35;
+        }
+
+        .property-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .search-link:hover {
+            text-decoration: underline;
+        }
+        .font-style{
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+        }
+        .titlu{
+            text-align: center;
+            font-size: 24px;
+            text-decoration-line: underline;
+            white-space: nowrap;
+            font-family: "Sofia", sans-serif;
+            font-size: 50px;
+            text-shadow: 3px 3px 3px #ababab;
+            padding-bottom: 25px;
+
+        }
+        .row{
+            border: none;
+        }
+
+        .center{
+            margin: auto;
+            width: 80%;
+        }
+        .capitalize{
+            text-transform: capitalize;
+        }
+        .empty-message{
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+            text-align:center;
+        }
+    </style>
+    <!meta http-equiv="refresh" content="1">
+
+</head>
+<body>
+<div class="row">
+      <div class="col-8">
+          <form method="get" action="{% url 'property_search' %}">
+              <strong><input type="text" class="search-bar" name="search"></strong>
+              <button type="submit" class="search-button">Cauta</button>
+        </form>
+      </div>
+      <div class="col-4">
+          <div id="current-time">
+                 Astazi: {% now "D, d M Y H:i:s" %}
+          </div>
+      </div>
+</div>
+
+
+<div class="titlu">
+    <a href="{% url 'property_list' %}">GoldKey Real Estate</a>
+</div>
+{% if properties %}
+{% for property in properties %}
+    <div class="property-list-container">
+                <div class="property-item">
+                    <div class="row">
+                        <div class="col-8" style="font-size:18px"><strong>{{ property.RS_titlu }}</strong></div>
+                        <div class="col-4 font-style">Pret: €{{ property.RS_pret }}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 font-style">
+                        Zona: {{ property.RS_zona }}
+                    </div>
+                     <div class="col-sm-6 font-style">
+                        Suprafață utilă (m²): {{ property.RS_total_mp }}
+                    </div>
+                </div>
+                <br>
+                 <div class="row">
+                    <div class="col-sm-6 font-style">
+                        Număr camere: {{ property.RS_camere }}
+                    </div>
+                     <div class="col-sm-6 font-style capitalize">
+                         Compartimentare: {{property.RS_compartimentare}}
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6 font-style">
+                        Număr bai: {{ property.RS_bai }}
+                    </div>
+                     <div class="col-sm-6 font-style">
+                        An finalizare construcție: {{ property.RS_an_finalizare_constructie }}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6 font-style">
+                        Etaj: {{ property.RS_etaj }}
+                    </div>
+                     <div class="col-sm-6 font-style">
+                        Stare proprietate: {{ property.RS_stare_proprietate }}
+                    </div>
+                </div>
+                <br>
+                <h2>Descriere:</h2>
+                <div class="font-style"> {{ property.RS_descriere }}</div>
+    </div>
+{% endfor %}
+{% else %}
+    <div class="property-list-container">
+        <p class="empty-message">Niciun rezultat găsit. Încercați o altă căutare sau vizualizați toate proprietățile.</p>
+            <a href="{% url 'property_list' %}" class="search-link">
+                <p class="empty-message">Vizualizați toate apartamentele</p>
+            </a>
+    </div>
+{% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Search</title>
+</head>
+<body>
+
+<h2>Property Search</h2>
+
+<form method="get" action="{% url 'property_search' %}">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title">
+
+    <label for="zona">Zona:</label>
+    <input type="text" name="zona" id="zona">
+
+    <label for="price">Price:</label>
+    <input type="number" name="price" id="price">
+
+    <button type="submit">Search</button>
+</form>
+{% if properties %}
+    <h3>Search Results:</h3>
+    <ul>
+        {% for property in properties %}
+            <li>
+                <strong>Title:</strong> {{ property.title }}<br>
+                <strong>Zona:</strong> {{ property.zona }}<br>
+                <strong>Suprafata utila(mp):</strong> {{ property.total_mp }}<br>
+                <strong>Etaj:</strong> {{ property.floor }}<br>
+                <strong>An finalizare constructie:</strong> {{ property.year_construction }}<br>
+                <strong>Stare proprietate:</strong> {{ property.property_status }}<br>
+                <strong>Pret:</strong> ${{ property.price }}<br>
+                <strong>Numar camere:</strong> {{ property.bedrooms }}<br>
+                <strong>Bai:</strong> {{ property.bathrooms }}<br>
+                <strong>Descriere:</strong> {{ property.description }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No properties match the search criteria.</p>
+{% endif %}
+</body>
+</html>
